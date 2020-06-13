@@ -84,7 +84,7 @@ serialPort.getAllDeviceList(function(res){
 
 示例
 ```javascript
-var list serialPort.getAllDeviceList().list
+var list = serialPort.getAllDeviceList().list
 console.log(list)
 ```  
 
@@ -123,7 +123,7 @@ serialPort.getAllDevicePath(function(res){
 
 示例
 ```javascript
-var list serialPort.getAllDevicePathSync().list
+var list = serialPort.getAllDevicePathSync().list
 console.log(list)
 ```   
 
