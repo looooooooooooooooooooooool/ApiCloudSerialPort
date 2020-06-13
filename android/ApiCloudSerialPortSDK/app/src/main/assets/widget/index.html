@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>WinC</title>
+    <style>
+    	html,body{background:white;}
+    </style>
+	<script type="text/javascript">
+	    var serialPort;
+	    apiready = function(){
+            serialPort = api.require("FvvSerialPort")
+            api.addEventListener({
+                name:"SerialPortMessage"
+            }, function(ret, err){
+                alert(JSON.stringify(ret))
+            })
+	    };
+	    function log(object){
+	       alert(JSON.stringify(object))
+	    }
+	    function openSerialPort(){
+	       serialPort.setPath("/dev/ttyS4");
+           serialPort.setBaudRate(9600);
+	       serialPort.open()
+	    }
+	    function closeSerialPort(){
+	        alert(2)
+	        serialPort.close()
+	    }
+	    function setRecType(type){
+	        serialPort.setReceiveType(type)
+	    }
+	    function setSendType(type){
+	        serialPort.setSendType(type)
+	    }
+	    function send(){
+	        serialPort.send(11)
+	    }
+	    function isOpen(){
+	        alert(serialPort.isOpen())
+	    }
+	</script>
+</head>
+<body>
+    <div id="wrap">
+        <div id='header'>
+            <h1>模块实例</h1>
+        </div>
+        <div id="main">
+            <button onclick="openSerialPort()">打开</button>
+            <button onclick="closeSerialPort()">关闭</button>
+            <button onclick="setRecType('HEX')">设置接收HEX</button>
+            <button onclick="setRecType('ASCII')">设置接收ASCII</button>
+            <button onclick="setSendType('HEX')">设置发送HEX</button>
+            <button onclick="setSendType('ASCII')">设置发送ASCII</button>
+            <button onclick="send()">发送</button>
+            <button onclick="isOpen()">状态</button>
+        </div>
+        <div id="footer">
+            <h5>APICloud Copyright &copy;<span id="year"></span> </h5>
+        </div>
+    </div>
+</body>
+</html>
