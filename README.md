@@ -18,7 +18,7 @@
 
 #### 引用方式
 ```javascript
-var serialPort = api.require("FvvSerialPort");
+var serialPort = api.require("fvvSerialPort");
 ```
 
 #### API
@@ -172,14 +172,14 @@ serialPort.setStopBits(1)
 serialPort.setDataBits(8)
 ```
 
-**<span id="setParity">设置检验位</span>**  
+**<span id="setParity">设置检验</span>**  
 **<font color=#ef5656 >setParity(parity)</font>**  
 
 参数说明
 
 | 参数 | 类型 | 说明 |
 | :------------: | :------------: | :------------: |
-| parity | int | 设置检验位 默认值为0无校验，1奇校验，2偶校验 |
+| parity | int | 设置检验 默认值为0无校验，1奇校验，2偶校验 |
 
 
 示例

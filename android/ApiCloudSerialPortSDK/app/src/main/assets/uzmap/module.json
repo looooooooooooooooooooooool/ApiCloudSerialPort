@@ -1,7 +1,7 @@
 {
 	"modules":[
       {
-        "name":"FvvSerialPort",
+        "name":"fvvSerialPort",
         "class":"apicloud.module.serialport.FvvSerialPort"
       }
     ]

@@ -11,7 +11,7 @@
 	<script type="text/javascript">
 	    var serialPort;
 	    apiready = function(){
-            serialPort = api.require("FvvSerialPort")
+            serialPort = api.require("fvvSerialPort")
             api.addEventListener({
                 name:"SerialPortMessage"
             }, function(ret, err){
@@ -22,9 +22,8 @@
 	       alert(JSON.stringify(object))
 	    }
 	    function openSerialPort(){
-	       serialPort.setPath("/dev/ttyS4");
            serialPort.setBaudRate(9600);
-	       serialPort.open()
+	       serialPort.open("/dev/ttyS4")
 	    }
 	    function closeSerialPort(){
 	        alert(2)
